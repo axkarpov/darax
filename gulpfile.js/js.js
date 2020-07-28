@@ -29,14 +29,7 @@ function js() {
             },
           },
         ],
-      },
-      resolve: {
-        alias: {
-          Components: resolve('./app/blocks'),
-          Libs: resolve('./app/blocks/libs'),
-          Generic: resolve('.app/blocks/generic'),
-        },
-      },
+      }
     }))
     .pipe(dest('dist/app/js/'))
     .pipe(browserSync.reload({ stream: true }));
