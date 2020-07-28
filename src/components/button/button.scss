@@ -1,0 +1,38 @@
+%button {
+  background: none;
+  width: 200px;
+  height: 50px;
+  border-style: solid;
+  border-color: white;
+  border-width: 3px;
+  border-radius: 2px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: white;
+  transition: all .4s ease 0s;
+
+
+  &:hover {
+    font-size: 16px;
+    transform: translateY(-7px);
+  }
+
+  &:active {
+
+  }
+}
+
+.button {
+  //@extend %button;
+}
+
+%button-secondary {
+  @extend %button;
+  border-color: black;
+
+  &:hover {
+
+  }
+}
