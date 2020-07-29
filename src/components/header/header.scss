@@ -3,14 +3,17 @@
   height: 600px;
 
   &__container {
-  height: 100%;
+    height: 100%;
   }
 
   &__top {
     display: flex;
     align-items: center;
     padding-top: 10px;
-
+    @media (max-width: $md3) {
+      flex:1 1 auto;
+      justify-content: space-between;
+    }
   }
 
   &__logo {
@@ -22,6 +25,7 @@
     justify-content: center;
     list-style: none;
     padding: 0;
+
     li {
       margin: 0 20px;
       @media (max-width: 822px) {
@@ -29,12 +33,17 @@
       }
     }
 
+    @media (max-width: $md3) {
+      visibility: hidden;
+      display: none;
+    }
+
     &__element {
       color: #fff;
       font-size: 20px;
       text-decoration: none;
       transition: 0.3s;
-      @media (min-width: 992px){
+      @media (min-width: 992px) {
         &:hover {
           opacity: 0.8;
         }
@@ -42,29 +51,35 @@
     }
   }
 
-  &__user{
+  &__user {
     display: flex;
     align-items: center;
     justify-items: end;
     position: relative;
 
-    &__basket{
+    &__basket {
       padding: 0 15px 0 0;
       @media (max-width: 930px) {
         display: none;
       }
     }
 
-    &__icon{
+    &__icon {
       height: 40px;
       width: 40px;
       background: white;
       border-radius: 20px;
       margin: 0 15px 0 0;
       cursor: pointer;
+
+      @media (max-width: $md3) {
+        height: 50px;
+        width: 50px;
+        border-radius: 40px;
+      }
     }
 
-    &__logout{
+    &__logout {
       color: #fff;
       font-size: 17px;
       opacity: 0.7;
@@ -74,7 +89,7 @@
       }
     }
 
-    &__menu{
+    &__menu {
       top: 50px;
       right: 0px;
       position: absolute;
@@ -85,54 +100,62 @@
       border-width: 3px;
       border-color: dimgrey;
       opacity: 0;
-      transition:opacity 0.3s ease 0s;
+      transition: opacity 0.3s ease 0s;
     }
 
-    &__list{
+    &__list {
       list-style: none;
       padding: 0px;
-      li{
+
+      li {
         margin: 10px 10px;
       }
     }
 
-    &__elem{
+    &__elem {
       color: #fff;
       font-size: 15px;
       text-decoration: none;
     }
   }
 
-  &__main{
+  &__main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 85%;
     flex: 1 1 auto;
-  }
-
-  &__tittle{
-    margin: 0 0 20px 0;
-    p{
-
-      font-size: 50px;
+    @media (max-width: $md3) {
+      align-items: center;
+      justify-content: center;
     }
   }
 
-  &__sale{
+  &__tittle {
+    margin: 0 0 15px 0;
+
+    p {
+      @include font-size(60px);
+    }
+  }
+
+  &__sale {
     margin: 0 0 25px 0;
-    p{
 
-      font-size: 30px;
+    p {
+        @include font-size(40px);
     }
   }
 
-  &__button{
+  &__button {
     @extend %button;
+    @media (max-width: $md3) {
+
+    }
   }
 }
 
-.open{
+.open {
   opacity: 1;
   visibility: visible;
 }
